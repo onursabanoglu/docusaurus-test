@@ -36,6 +36,13 @@ const config: Config = {
       'classic',
       {
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'Current',
+              path: '1.0.0',
+            },
+          },
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -50,7 +57,11 @@ const config: Config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: ['./src/css/custom.css', './src/css/theme-custom.css'],
+          customCss: [
+            './src/css/custom.css',
+            './src/css/theme-custom.css',
+            './src/css/design-system.css',
+          ],
         },
       } satisfies Preset.Options,
     ],
@@ -89,8 +100,17 @@ const config: Config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/facebook/docusaurus',
+          label: 'Storybook',
           position: 'right',
         },
       ],
